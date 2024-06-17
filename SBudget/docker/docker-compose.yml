@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_USER=profile_master_user
+      - MYSQL_PASSWORD=555555
+      - MYSQL_DATABASE=SBudget_api
+      - MYSQL_ROOT_PASSWORD=051210
