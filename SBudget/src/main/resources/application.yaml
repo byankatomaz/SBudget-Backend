@@ -1,0 +1,49 @@
+jwt:
+  public:
+    key: classpath:app.pub
+  private:
+    key: classpath:app.key
+
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/SBudget_api
+    username: profile_master_user
+    password: 555555
+
+  main:
+    allow-circular-references: true
+
+  jpa:
+    defer-datasource-initialization: true
+
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 8056
+
+  error:
+    include-stacktrace: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:  "*"
+
+      cors:
+        allowed-headers:
+          - "*"
+        allowed-origins:
+          - "*"
+        allowed-methods:
+          - "*"
+        allow-credentials: true
+
